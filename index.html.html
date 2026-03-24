@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Interest Calculator</title>
+
+<style>
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+margin-top:100px;
+}
+
+.container{
+background:#1e293b;
+width:350px;
+padding:25px;
+margin:auto;
+border-radius:10px;
+box-shadow:0px 0px 10px black;
+}
+
+input{
+width:90%;
+padding:8px;
+margin:8px;
+border-radius:5px;
+border:none;
+}
+
+button{
+background:#10b981;
+color:white;
+border:none;
+padding:10px;
+width:95%;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#059669;
+}
+
+h2{
+color:#34d399;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Interest Calculator</h2>
+
+<input type="number" id="principal" placeholder="Principal Amount">
+
+<input type="number" id="rate" placeholder="Interest Rate %">
+
+<input type="number" id="time" placeholder="Time (Years)">
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+<script>
+
+function calculate()
+{
+let p = document.getElementById("principal").value;
+let r = document.getElementById("rate").value;
+let t = document.getElementById("time").value;
+
+let interest = (p*r*t)/100;
+
+let total = parseFloat(p) + interest;
+
+document.getElementById("result").innerHTML =
+"Simple Interest = " + interest +
+"<br>Total Amount = " + total;
+}
+
+</script>
+
+</body>
+</html>
